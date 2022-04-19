@@ -1,12 +1,20 @@
 import React from 'react';
+import './Cosmetic.css'
 
 const Cosmetic = (props) => {
     const {name, price, id} =props.cosmetic
+
+    const addToCart = (id) =>{
+        console.log('button added', id)
+    }
+   
+
     return (
-        <div>
+        <div className='product'>
             <h1>Buy this:{name}</h1>
             <p>Only for:${price}</p>
             <p>Product id:{id}</p>
+            <button onClick={() =>addToCart(id)}>Add to Cart</button>
         </div>
     );
 };
