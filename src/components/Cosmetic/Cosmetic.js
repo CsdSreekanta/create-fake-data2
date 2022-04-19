@@ -1,13 +1,14 @@
 import React from 'react';
+import { addToDb } from '../Utilities/MealDb';
 import './Cosmetic.css'
 
 const Cosmetic = (props) => {
     const {name, price, id} =props.cosmetic
 
-    const addToCart = (id) =>{
-        console.log('button added', id)
-    }
-   
+   const addToCart =(id)=>{
+      addToDb(id)
+  
+   }
 
     return (
         <div className='product'>
@@ -15,6 +16,7 @@ const Cosmetic = (props) => {
             <p>Only for:${price}</p>
             <p>Product id:{id}</p>
             <button onClick={() =>addToCart(id)}>Add to Cart</button>
+           
         </div>
     );
 };
